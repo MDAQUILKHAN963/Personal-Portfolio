@@ -122,7 +122,16 @@ function Hero() {
               <i className="fa-solid fa-rocket" /> View Projects
             </a>
             {profile.resumeUrl && (
-              <a href={profile.resumeUrl} target="_blank" rel="noreferrer" className="btn btn-secondary">
+              <a
+                href={
+                  profile.resumeUrl.startsWith('http')
+                    ? profile.resumeUrl
+                    : import.meta.env.BASE_URL + profile.resumeUrl.replace(/^\//, '')
+                }
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-secondary"
+              >
                 <i className="fa-solid fa-download" /> Resume
               </a>
             )}

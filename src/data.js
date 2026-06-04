@@ -15,7 +15,9 @@ export const profile = {
   // Leave as '' to show a gradient monogram instead.
   photo: 'me.jpg',
   location: 'Jhansi, India',
-  resumeUrl: '', // e.g. '/resume.pdf' (put the PDF in /public), or a Google Drive link
+  // Put your resume PDF in /public and write just its filename here (e.g. 'resume.pdf'),
+  // or paste a full link (e.g. a Google Drive share URL). Empty = no button.
+  resumeUrl: 'resume.pdf',
 }
 
 export const social = [
