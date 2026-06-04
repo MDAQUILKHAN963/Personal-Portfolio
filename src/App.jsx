@@ -140,7 +140,15 @@ function Hero() {
         </div>
         <div className="hero-visual reveal">
           {profile.photo ? (
-            <img src={profile.photo} alt={profile.name} className="hero-photo" />
+            <img
+              src={
+                profile.photo.startsWith('http')
+                  ? profile.photo
+                  : import.meta.env.BASE_URL + profile.photo.replace(/^\//, '')
+              }
+              alt={profile.name}
+              className="hero-photo"
+            />
           ) : (
             <div className="hero-monogram">{profile.name.charAt(0)}</div>
           )}

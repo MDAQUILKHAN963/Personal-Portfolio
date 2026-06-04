@@ -10,9 +10,10 @@ export const profile = {
   titles: ['AI/ML Developer', 'Full-Stack Developer', 'CSE Undergrad @ JUET'],
   tagline:
     'Computer Science undergrad building intelligent applications — from deep-learning models to full-stack web apps that put them to work.',
-  // Path to your photo. Drop the image in /public and reference it like '/me.jpg'.
+  // Put your image file in the /public folder and write just its filename here.
+  // e.g. photo: 'me.jpg'  (the file must be at public/me.jpg)
   // Leave as '' to show a gradient monogram instead.
-  photo: '',
+  photo: 'me.jpg',
   location: 'Jhansi, India',
   resumeUrl: '', // e.g. '/resume.pdf' (put the PDF in /public), or a Google Drive link
 }
