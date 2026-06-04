@@ -64,7 +64,21 @@ function useTypingEffect(words, speed = 90, pause = 1600) {
 
 /* ---------- sections ---------- */
 
-function Navbar() {
+function useTheme() {
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('theme')
+    if (saved) return saved
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  })
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }, [theme])
+  const toggle = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))
+  return { theme, toggle }
+}
+
+function Navbar({ theme, toggleTheme }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   useEffect(() => {
@@ -89,9 +103,19 @@ function Navbar() {
             </li>
           ))}
         </ul>
-        <button className="nav-toggle" onClick={() => setOpen((o) => !o)} aria-label="Menu">
-          <i className={`fa-solid ${open ? 'fa-xmark' : 'fa-bars'}`} />
-        </button>
+        <div className="nav-right">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle dark mode"
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            <i className={`fa-solid ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`} />
+          </button>
+          <button className="nav-toggle" onClick={() => setOpen((o) => !o)} aria-label="Menu">
+            <i className={`fa-solid ${open ? 'fa-xmark' : 'fa-bars'}`} />
+          </button>
+        </div>
       </div>
     </nav>
   )
@@ -510,9 +534,10 @@ function Footer() {
 
 export default function App() {
   useScrollReveal()
+  const { theme, toggle } = useTheme()
   return (
     <>
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggle} />
       <Hero />
       <About />
       <Skills />
