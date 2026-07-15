@@ -51,7 +51,7 @@ export const skills = [
   {
     icon: 'fa-solid fa-brain',
     title: 'AI / Machine Learning',
-    items: ['PyTorch', 'TensorFlow', 'Keras', 'scikit-learn', 'OpenCV', 'spaCy'],
+    items: ['PyTorch', 'TensorFlow', 'Keras', 'scikit-learn', 'OpenCV', 'spaCy', 'Generative AI', 'RAG', 'LangChain', 'LLMs', 'Transformers', 'Vector DBs', 'Fine-tuning'],
   },
   {
     icon: 'fa-solid fa-code',
