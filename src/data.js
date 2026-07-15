@@ -182,6 +182,8 @@ export const achievements = [
 export const certifications = [
   { name: 'Artificial Intelligence Foundation Certification', issuer: 'Infosys Springboard', url: '' },
   { name: 'Machine Learning using Python', issuer: 'Infosys Springboard', url: '' },
+  { name: 'Intro to Deep Learning', issuer: 'Kaggle', url: '' },
+  { name: 'Graph Theory Programming Camp', issuer: 'AlgoUniversity', url: '' },
 ]
 
 export const contact = {
