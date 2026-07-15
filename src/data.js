@@ -135,6 +135,16 @@ export const projects = [
 export const experience = [
   {
     role: 'Machine Learning Intern',
+    org: 'NASA Harvest, University of Maryland (Remote) · Tools: Python, Deep Learning',
+    period: 'June 2026 — Present',
+    points: [
+      'Developed a deep-learning semantic segmentation model (U-Net + EfficientNet) to detect deforested areas in Amazon satellite imagery, classifying each pixel as forest or deforested.',
+      'Engineered the complete data pipeline by preparing ~4,700 labeled tiles from Sentinel-1/2 satellite data and training end-to-end on a single free GPU.',
+      'Achieved 96% pixel accuracy and a 0.80 F1 score on validation data.',
+    ],
+  },
+  {
+    role: 'Machine Learning Intern',
     org: 'NASA Harvest (Remote) · Tools: Python, TensorFlow, Deep Learning',
     period: 'June 2025 — July 2025',
     points: [
